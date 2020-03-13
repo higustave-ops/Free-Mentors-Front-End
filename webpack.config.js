@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable prettier/prettier */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -23,6 +25,10 @@ module.exports = {
                 test: /\.s(a|c)ss$/,
                 exclude: /\.module.(s(a|c)ss)$/,
                 use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'sass-loader' }]
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(png|woff|woff2|ttf|eot)($|\?)/i,
